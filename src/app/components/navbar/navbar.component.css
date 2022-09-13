@@ -1,0 +1,8 @@
+button{
+    border-color: #411530;
+    color:#411530;
+}
+button:hover{
+    background-color: #411530;
+    color: aliceblue;
+}

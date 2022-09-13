@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<h1 class="titulo">Menu Semanal</h1>
+<div  class="caracteristicas" *ngIf="isLogged">
+    <ul>
+        <li>Precio acumulado del menu =  {{precioAcumulado | currency:'ARG':'$':'1.2-2'}} </li>
+        <li>Tiempo de preparacion total = {{tiempoAcumulado}} min  </li>
+    </ul>
+    <ul>
+        <li>Promedio  Healt Score = {{saludableAcumulado}}<br></li>
+        <li>Cantidad de platos vegano en el menu =  {{cantidadVegan}}  </li>
+        <li>Cantidad de platos No vegano = {{cantidadNoVegan}}  </li>
+    </ul>
+</div>
+
+<div class="botones">
+    <button class="btn btn-primary" *ngIf="(!habilitarBus && isLogged)"   (click)="habilitarBusqueda()">Buscar plato  <i class="fa-solid fa-magnifying-glass"></i></button>
+    <button class="btn btn-warning" *ngIf="!habilitarPla"  (click)="habilitarPlatos()">Ver platos  
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+        </svg> 
+    </button>
+</div>
+
+<!-- BUSQUEDA DE PLATOS-->
+<app-buscar *ngIf="habilitarBus"
+    [esperando]="loading"
+    [datosHijo]="platos"
+    [buscarHab]="habilitarBus"
+    [cantPlato]="cantidadPlatos"
+    (busquedaPlato)="busqueda=$event"
+    (index)="agregar($event)"
+></app-buscar>
+
+<!--    Menu o plato        -->
+<div class="container-fluid">
+    <app-platos 
+    *ngFor="let datos of platos"
+    [datosHijo]="datos"
+    [logueado]="isLogged"
+    [platoHab]="habilitarPla"
+    (indice)="borrarPlato($event)"
+    ></app-platos>
+</div>
+

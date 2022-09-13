@@ -1,0 +1,26 @@
+
+<div class="busqueda" *ngIf="buscarHab">
+    <input type="text" [formControl]="inputBusqueda" placeholder="Buscar plato para agregar">
+</div>
+
+<div class="row" id="buscar">
+    <div class="card col-sm-12 col-md-3 col-lg-6" id="plato" style="width: 18rem;"*ngFor="let platos of listaBusqueda">
+        <img src="{{platos.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{platos.title}}</h5>
+            <div >
+                <div *ngIf="esperando" class="loading">
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                </div>
+                <button id="botonAdd" [disabled]="this.cantPlato==4" class="btn btn-success"
+                    (click)="agregar(platos.id,listaBusqueda)" *ngIf="!esperando">
+                    Agregar al menu
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+   

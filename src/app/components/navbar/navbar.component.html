@@ -1,0 +1,9 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="home"> A La Carta</a>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-success m-1" *ngIf="isLogged" (click)="irLogout()"type="submit">Logout</button>
+        <button class="btn btn-outline-success m-1" *ngIf="!isLogged" (click)="irLogin()" type="submit">Login</button>
+      </form>
+    </div>
+</nav>

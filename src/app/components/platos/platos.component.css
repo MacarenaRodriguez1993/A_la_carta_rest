@@ -1,0 +1,40 @@
+#plato{
+    border:2px solid #c0b2bc;
+    background-color: rgba(65, 56, 64, 0.2);
+}
+#buscar{
+    justify-content: center;
+}
+.botones{
+    display: flex;
+}
+/*.carta ul{
+    list-style: none;
+    border: 2px solid #D1512D;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255,255, 0.05);
+    margin: auto;
+    
+}
+.carta{
+    margin: 10px;
+}
+.carta li{
+    width: 400px;
+    height: 300px;
+}
+
+.carta li button{
+    color: black;
+}
+.carta li img{
+    width: 50%;
+}
+.carta li button{
+    margin: 3px;
+    border-radius: 5px;
+}
+*/
