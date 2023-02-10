@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-size: cover;
-    background-image: url(../../rest/src/assets/imagenes/imagen4.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: antiquewhite;
-    font-family: 'Oleo Script Swash Caps', cursive;
+body {
+  background-size: cover;
+  background-image: url(../../A_la_carta_rest/src/assets/imagenes/imagen4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: antiquewhite;
+  font-family: "Oleo Script Swash Caps", cursive;
 }
